@@ -20,7 +20,7 @@ BuildRequires:  scons, pkgconfig
 BuildRequires:  libraw1394-devel, libiec61883-devel, libavc1394-devel
 BuildRequires:  libxml++-devel
 BuildRequires:  python-qt4-devel, expat-devel, dbus-devel
-BuildRequires:  libdbus-qt-devel
+BuildRequires:  libdbus-qt-1-devel
 
 %description
 The FFADO library provides a generic, open-source solution for the
@@ -53,7 +53,7 @@ and is available in both jack1 and jack2.
 %package -n ffado
 Summary:        Firewire audio driver applications and utilities
 Group:          Sound
-Requires:       %{name} = %{version}-%{release}
+Requires:       %{lib_name} = %{version}-%{release}
 Requires:       python-dbus, qt4-qtdbus
 
 %description -n ffado
@@ -62,29 +62,31 @@ Configuration utilities for the FFADO firewire drivers
 %files -n ffado
 %defattr(-,root,root,-)
 %{_bindir}/*
-%dir %{_datadir}/libffado
-%{_datadir}/libffado/python
-%{_datadir}/libffado/icons/hi64-apps-ffado.png
-%{_datadir}/libffado/configuration
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/python
+%{_datadir}/%{name}/icons/hi64-apps-ffado.png
+%{_datadir}/%{name}/configuration
+%{_datadir}/applications/mandriva-ffado-mixer.desktop
 
 #-----------------------------------
 %package -n %{lib_name_devel}
 Summary:        Firewire audio driver library development headers
 Group:          Development/Libraries
-Requires:       %{name} = %{version}-%{release}
+Requires:       %{lib_name} = %{version}-%{release}
 Requires:       pkgconfig, libxml++-devel
-Requires:       dbus-devel, dbus-python-devel
+Requires:       libdbus-qt-1-devel
 Requires:       libraw1394-devel, libiec61883-devel, libavc1394-devel
+Provides:       %{name}-devel = %{version}-%{release}
 
 %description -n %{lib_name_devel}
 Development files needed to build applications against libffado.
 
 %files -n %{lib_name_devel}
 %defattr(-,root,root,-)
-%{_libdir}/libffado.so
-%dir %{_includedir}/libffado
-%{_includedir}/libffado/*.h
-%{_libdir}/pkgconfig/libffado.pc
+%{_libdir}/%{name}.so
+%dir %{_includedir}/%{name}
+%{_includedir}/%{name}/*.h
+%{_libdir}/pkgconfig/%{name}.pc
 
 #-----------------------------------
 %prep
@@ -102,6 +104,19 @@ scons PREFIX=%{_prefix} LIBDIR=%{_libdir} \
 install -m 0644 support/tools/listirqinfo.py %{buildroot}%{_datadir}/libffado/python
 install -m 0644 support/tools/helpstrings.py %{buildroot}%{_datadir}/libffado/python
 
+mkdir -p %{buildroot}%{_datadir}/applications
+#make desktop file
+cat > %{buildroot}%{_datadir}/applications/mandriva-ffado-mixer.desktop <<EOF
+[Desktop Entry]
+Name=Ffado Mixer
+Comment=Mixer for Firewire Audio Devices
+Exec=%{_bindir}/ffado-mixer
+Icon=%{_datadir}/%{name}/icons/hi64-apps-ffado.png
+Terminal=false
+Type=Application
+Categories=X-MandrivaLinux-Multimedia-Sound;AudioVideo;
+EOF
+
 %clean
 rm -rf %{buildroot}
 
@@ -113,3 +128,4 @@ rm -rf %{buildroot}
 %endif
 
 
+%changelog
