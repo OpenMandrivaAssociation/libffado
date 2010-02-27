@@ -72,7 +72,7 @@ Configuration utilities for the FFADO firewire drivers
 #-----------------------------------
 %package -n %{lib_name_devel}
 Summary:        Firewire audio driver library development headers
-Group:          Development/Libraries
+Group:          Sound
 Requires:       %{lib_name} = %{version}-%{release}
 Requires:       pkgconfig, libxml++-devel
 Requires:       libdbus-qt-1-devel
