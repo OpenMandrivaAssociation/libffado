@@ -64,9 +64,10 @@ Configuration utilities for the FFADO firewire drivers
 %{_bindir}/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/python
-%{_datadir}/%{name}/icons/hi64-apps-ffado.png
 %{_datadir}/%{name}/configuration
 %{_datadir}/applications/mandriva-ffado-mixer.desktop
+%dir %{_datadir}/%{name}/icons
+%{_datadir}/%{name}/icons/hi64-apps-ffado.png
 
 #-----------------------------------
 %package -n %{lib_name_devel}
