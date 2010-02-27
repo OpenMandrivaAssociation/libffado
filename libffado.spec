@@ -21,6 +21,7 @@ BuildRequires:  libraw1394-devel, libiec61883-devel, libavc1394-devel
 BuildRequires:  libxml++-devel
 BuildRequires:  python-qt4-devel, expat-devel, dbus-devel
 BuildRequires:  libdbus-qt-1-devel
+BuildRequires:  python-dbus
 
 %description
 The FFADO library provides a generic, open-source solution for the
@@ -66,7 +67,6 @@ Configuration utilities for the FFADO firewire drivers
 %{_datadir}/%{name}/python
 %{_datadir}/%{name}/configuration
 %{_datadir}/applications/mandriva-ffado-mixer.desktop
-%dir %{_datadir}/%{name}/icons
 %{_datadir}/%{name}/icons/hi64-apps-ffado.png
 
 #-----------------------------------
