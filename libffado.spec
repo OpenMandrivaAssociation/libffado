@@ -1,6 +1,6 @@
 %define name    libffado
 %define version 2.0.0
-%define release %mkrel 2
+%define release %mkrel 3
 
 %define lib_major       2
 %define lib_name        %mklibname ffado %{lib_major} 
@@ -56,6 +56,7 @@ Summary:        Firewire audio driver applications and utilities
 Group:          Sound
 Requires:       %{lib_name} = %{version}-%{release}
 Requires:       python-dbus, qt4-qtdbus
+Requires:       python-qt4
 
 %description -n ffado
 Configuration utilities for the FFADO firewire drivers
