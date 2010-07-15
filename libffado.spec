@@ -1,6 +1,6 @@
 %define name    libffado
-%define version 2.0.0
-%define release %mkrel 3
+%define version 2.0.1
+%define release %mkrel 1
 
 %define lib_major       2
 %define lib_name        %mklibname ffado %{lib_major} 
@@ -77,7 +77,7 @@ Group:          Sound
 Requires:       %{lib_name} = %{version}-%{release}
 Requires:       pkgconfig, libxml++-devel
 Requires:       libdbus-qt-1-devel
-Requires:       libraw1394-devel, libiec61883-devel, libavc1394-devel
+Requires:       libiec61883-devel, libavc1394-devel, libraw1394-devel
 Provides:       %{name}-devel = %{version}-%{release}
 
 %description -n %{lib_name_devel}
