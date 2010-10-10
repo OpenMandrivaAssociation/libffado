@@ -1,6 +1,6 @@
 %define name    libffado
 %define version 2.0.1
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define lib_major       2
 %define lib_name        %mklibname ffado %{lib_major} 
@@ -20,7 +20,6 @@ BuildRequires:  scons, pkgconfig
 BuildRequires:  libraw1394-devel, libiec61883-devel, libavc1394-devel
 BuildRequires:  libxml++-devel
 BuildRequires:  python-qt4-devel, expat-devel, dbus-devel
-BuildRequires:  libdbus-qt-1-devel
 BuildRequires:  python-dbus
 
 %description
