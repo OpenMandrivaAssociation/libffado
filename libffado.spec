@@ -1,6 +1,6 @@
 %define name    libffado
 %define version 2.0.1
-%define release %mkrel 2
+%define release %mkrel 3
 
 %define lib_major       2
 %define lib_name        %mklibname ffado %{lib_major} 
@@ -75,7 +75,6 @@ Summary:        Firewire audio driver library development headers
 Group:          Sound
 Requires:       %{lib_name} = %{version}-%{release}
 Requires:       pkgconfig, libxml++-devel
-Requires:       libdbus-qt-1-devel
 Requires:       libiec61883-devel, libavc1394-devel, libraw1394-devel
 Provides:       %{name}-devel = %{version}-%{release}
 
