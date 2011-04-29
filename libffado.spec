@@ -1,6 +1,6 @@
 %define name    libffado
 %define version 2.0.1
-%define release %mkrel 3
+%define release %mkrel 4
 
 %define lib_major       2
 %define lib_name        %mklibname ffado %{lib_major} 
