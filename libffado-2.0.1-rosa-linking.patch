@@ -1,0 +1,11 @@
+--- libffado-2.0.1/support/dbus/SConscript.orig	2009-10-08 18:28:29.000000000 +0400
++++ libffado-2.0.1/support/dbus/SConscript	2012-09-03 16:01:56.939411197 +0400
+@@ -31,7 +31,7 @@
+ 
+ env.AppendUnique( CPPPATH=["#/", "#/src", "#/external/dbus/include"] )
+ env.PrependUnique( LIBPATH=[env['build_base']+"src", env['build_base']+"external/dbus"] )
+-env.PrependUnique( LIBS=["ffado", "dbus-c++"] )
++env.PrependUnique( LIBS=["ffado", "dbus-c++", "pthread"] )
+ 
+ if not env.GetOption( "clean" ):
+     env.MergeFlags( env["DBUS1_FLAGS"] )

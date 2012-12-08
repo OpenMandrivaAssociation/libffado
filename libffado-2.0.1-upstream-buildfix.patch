@@ -1,0 +1,50 @@
+Index: libffado/src/libieee1394/IsoHandlerManager.cpp
+===================================================================
+--- libffado/src/libieee1394/IsoHandlerManager.cpp
++++ libffado/src/libieee1394/IsoHandlerManager.cpp
+@@ -36,4 +36,5 @@
+ 
+ #include <cstring>
++#include <unistd.h>
+ #include <assert.h>
+ 
+Index: libffado/src/ffadodevice.cpp
+===================================================================
+--- libffado/src/ffadodevice.cpp
++++ libffado/src/ffadodevice.cpp
+@@ -35,4 +35,5 @@
+ #include <iostream>
+ #include <sstream>
++#include <unistd.h>
+ 
+ #include <assert.h>
+Index: libffado/src/bebob/bebob_dl_mgr.cpp
+===================================================================
+--- libffado/src/bebob/bebob_dl_mgr.cpp
++++ libffado/src/bebob/bebob_dl_mgr.cpp
+@@ -36,4 +36,5 @@
+ #include <cstdio>
+ #include <cstring>
++#include <unistd.h>
+ 
+ namespace BeBoB {
+Index: libffado/src/fireworks/fireworks_device.cpp
+===================================================================
+--- libffado/src/fireworks/fireworks_device.cpp
++++ libffado/src/fireworks/fireworks_device.cpp
+@@ -46,4 +46,5 @@
+ 
+ #include <sstream>
++#include <unistd.h>
+ using namespace std;
+ 
+Index: libffado/support/dbus/test-dbus.cpp
+===================================================================
+--- libffado/support/dbus/test-dbus.cpp
++++ libffado/support/dbus/test-dbus.cpp
+@@ -25,4 +25,5 @@
+ #include <stdlib.h>
+ #include <iostream>
++#include <unistd.h>
+ #include <signal.h>
+ 
