@@ -1,22 +1,29 @@
-%define lib_major       2
-%define lib_name        %mklibname ffado %{lib_major}
-%define lib_name_devel  %mklibname ffado -d
+%define lib_major 2
+%define lib_name %mklibname ffado %{lib_major}
+%define lib_name_devel %mklibname ffado -d
 
-Name:           libffado
-Summary:        Firewire audio drivers for JACK
-Version:        2.1.0
-Release:        1
+Name:		libffado
+Summary:	Firewire audio drivers for JACK
+Version:	2.1.0
+Release:	2
 
-Source:         http://www.ffado.org/files/%{name}-%{version}.tgz
-URL:            http://www.ffado.org/
-License:        GPLv2+ and GPLv3
-Group:          Sound
+Source0:	http://www.ffado.org/files/%{name}-%{version}.tgz
+URL:		http://www.ffado.org/
+License:	GPLv2+ and GPLv3
+Group:		Sound
 
-BuildRequires:  scons, pkgconfig
-BuildRequires:  libraw1394-devel, libiec61883-devel, libavc1394-devel
-BuildRequires:  libxml++-devel
-BuildRequires:  python-qt4-devel, expat-devel, dbus-devel
-BuildRequires:  python-dbus dbus-c++-devel python-qt4-dbus
+BuildRequires:	scons
+BuildRequires:	pkgconfig
+BuildRequires:	libraw1394-devel
+BuildRequires:	libiec61883-devel
+BuildRequires:	libavc1394-devel
+BuildRequires:	libxml++-devel
+BuildRequires:	python-qt4-devel
+BuildRequires:	expat-devel
+BuildRequires:	dbus-devel
+BuildRequires:	python-dbus
+BuildRequires:	dbus-c++-devel
+BuildRequires:	python-qt4-dbus
 
 %description
 The FFADO library provides a generic, open-source solution for the
@@ -26,11 +33,10 @@ firewire backends of the jack audio connection kit sound server
 (jackit package). This backend provides audio and midi support,
 and is available in both jack1 and jack2.
 
-#-----------------------------------
-%package -n %{lib_name}
 
-Summary:        Firewire audio drivers for JACK
-Group:          Sound
+%package -n %{lib_name}
+Summary:	Firewire audio drivers for JACK
+Group:		Sound
 
 %description -n %{lib_name}
 The FFADO library provides a generic, open-source solution for the
@@ -41,24 +47,24 @@ firewire backends of the jack audio connection kit sound server
 and is available in both jack1 and jack2.
 
 %files -n %{lib_name}
-%defattr(-,root,root,-)
-%doc AUTHORS ChangeLog LICENSE.* README
-%{_libdir}/libffado.so.*
+%{_libdir}/libffado.so.%{lib_major}*
 /lib/udev/rules.d/60-ffado.rules
 
-#-----------------------------------
+
 %package -n ffado
-Summary:        Firewire audio driver applications and utilities
-Group:          Sound
-Requires:       %{lib_name} = %{version}-%{release}
-Requires:       python-dbus, qt4-qtdbus
-Requires:       python-qt4
+Summary:		Firewire audio driver applications and utilities
+Group:			Sound
+Requires:		%{lib_name} = %{version}-%{release}
+Requires:		python-dbus
+Requires:		qt4-qtdbus
+Requires:		python-qt4
+Conflicts:		%{mklibname ffado 2} < 2.1.0.-2
 
 %description -n ffado
-Configuration utilities for the FFADO firewire drivers
+Configuration utilities for the FFADO firewire drivers.
 
 %files -n ffado
-%defattr(-,root,root,-)
+%doc AUTHORS ChangeLog LICENSE.* README
 %{_bindir}/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/python
@@ -75,26 +81,26 @@ Configuration utilities for the FFADO firewire drivers
 %{_datadir}/dbus-1/services/org.ffado.Control.service
 %doc %{_mandir}/man1/*
 
-#-----------------------------------
 %package -n %{lib_name_devel}
-Summary:        Firewire audio driver library development headers
-Group:          Sound
-Requires:       %{lib_name} = %{version}-%{release}
-Requires:       pkgconfig, libxml++-devel
-Requires:       libiec61883-devel, libavc1394-devel, libraw1394-devel
-Provides:       %{name}-devel = %{version}-%{release}
+Summary:		Firewire audio driver library development headers
+Group:			Sound
+Requires:		%{lib_name} = %{version}-%{release}
+Requires:		pkgconfig
+Requires:		libxml++-devel
+Requires:		libiec61883-devel
+Requires:		libavc1394-devel
+Requires:		libraw1394-devel
+Provides:		%{name}-devel = %{version}-%{release}
 
 %description -n %{lib_name_devel}
 Development files needed to build applications against libffado.
 
 %files -n %{lib_name_devel}
-%defattr(-,root,root,-)
 %{_libdir}/%{name}.so
 %dir %{_includedir}/%{name}
 %{_includedir}/%{name}/*.h
 %{_libdir}/pkgconfig/%{name}.pc
 
-#-----------------------------------
 %prep
 %setup -q -n %{name}-%{version}
 
