@@ -22,7 +22,8 @@ BuildRequires:	python-qt4-devel
 BuildRequires:	expat-devel
 BuildRequires:	dbus-devel
 BuildRequires:	python-dbus
-BuildRequires:	dbus-c++-devel
+BuildRequires:	pkgconfig(dbus-c++-1)
+BuildRequires:	pkgconfig(libconfig)
 BuildRequires:	python-qt4-dbus
 
 %description
@@ -102,7 +103,7 @@ Development files needed to build applications against libffado.
 %{_libdir}/pkgconfig/%{name}.pc
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 %scons PREFIX=%{_prefix} LIBDIR=%{_libdir} MANDIR=%{_mandir}
