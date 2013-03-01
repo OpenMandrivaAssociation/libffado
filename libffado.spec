@@ -105,11 +105,10 @@ Development files needed to build applications against libffado.
 %setup -q -n %{name}-%{version}
 
 %build
-scons PREFIX=%{_prefix} LIBDIR=%{_libdir} MANDIR=%{_mandir}
+%scons PREFIX=%{_prefix} LIBDIR=%{_libdir} MANDIR=%{_mandir}
 
 %install
-scons PREFIX=%{_prefix} LIBDIR=%{_libdir} \
-      DESTDIR=%{buildroot} install
+%scons_install PREFIX=%{_prefix} LIBDIR=%{_libdir}
 
 install -m 0755 support/tools/listirqinfo.py %{buildroot}%{_datadir}/libffado/python
 install -m 0755 support/tools/helpstrings.py %{buildroot}%{_datadir}/libffado/python
