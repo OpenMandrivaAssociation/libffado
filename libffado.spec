@@ -5,7 +5,7 @@
 Name:		libffado
 Summary:	Firewire audio drivers for JACK
 Version:	2.1.0
-Release:	3
+Release:	4
 
 Source0:	http://www.ffado.org/files/%{name}-%{version}.tgz
 URL:		http://www.ffado.org/
@@ -59,7 +59,7 @@ Requires:		%{lib_name} = %{version}-%{release}
 Requires:		python-dbus
 Requires:		qt4-qtdbus
 Requires:		python-qt4
-Conflicts:		%{mklibname ffado 2} < 2.1.0.-2
+Conflicts:		%{mklibname ffado 2} < 2.1.0-2
 
 %description -n ffado
 Configuration utilities for the FFADO firewire drivers.
