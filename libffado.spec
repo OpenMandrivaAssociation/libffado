@@ -14,9 +14,9 @@ Group:		Sound
 
 BuildRequires:	scons
 BuildRequires:	pkgconfig
-BuildRequires:	libraw1394-devel
+BuildRequires:	pkgconfig(libraw1394)
 BuildRequires:	libiec61883-devel
-BuildRequires:	libavc1394-devel
+BuildRequires:	pkgconfig(libavc1394)
 BuildRequires:	libxml++-devel
 BuildRequires:	python-qt4-devel
 BuildRequires:	expat-devel
