@@ -5,7 +5,7 @@
 Name:		libffado
 Summary:	Firewire audio drivers for JACK
 Version:	2.1.0
-Release:	4
+Release:	5
 
 Source0:	http://www.ffado.org/files/%{name}-%{version}.tgz
 URL:		http://www.ffado.org/
