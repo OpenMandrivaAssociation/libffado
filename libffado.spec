@@ -5,7 +5,7 @@
 Name:		libffado
 Summary:	Firewire audio drivers for JACK
 Version:	2.1.0
-Release:	5
+Release:	6
 
 Source0:	http://www.ffado.org/files/%{name}-%{version}.tgz
 URL:		http://www.ffado.org/
@@ -132,39 +132,3 @@ Terminal=false
 Type=Application
 Categories=X-MandrivaLinux-Multimedia-Sound;AudioVideo;
 EOF
-
-
-%changelog
-* Fri Apr 29 2011 Oden Eriksson <oeriksson@mandriva.com> 2.0.1-4mdv2011.0
-+ Revision: 660246
-- mass rebuild
-
-* Sun Oct 17 2010 Frank Kober <emuse@mandriva.org> 2.0.1-3mdv2011.0
-+ Revision: 586202
-- kill qt3 dependency for devel package as well
-
-* Sun Oct 10 2010 Frank Kober <emuse@mandriva.org> 2.0.1-2mdv2011.0
-+ Revision: 584640
-- remove obsolete dbus-qt3 BR
-
-* Thu Jul 15 2010 Frank Kober <emuse@mandriva.org> 2.0.1-1mdv2011.0
-+ Revision: 553651
-- new version 2.0.1 now working with new fw kernel stack
-
-* Sat Mar 20 2010 Frank Kober <emuse@mandriva.org> 2.0.0-3mdv2010.1
-+ Revision: 525563
-- add python-qt4 to Requires, bump release
-
-* Sun Feb 28 2010 Frank Kober <emuse@mandriva.org> 2.0.0-2mdv2010.1
-+ Revision: 512749
-- rebuild with dependencies in main/release
-
-* Sat Feb 27 2010 Frank Kober <emuse@mandriva.org> 2.0.0-1mdv2010.1
-+ Revision: 512339
--update group tag
--add python-dbus BR
--fix icon path
-- import ffado version 2.0.0
-- import libffado
-
-
