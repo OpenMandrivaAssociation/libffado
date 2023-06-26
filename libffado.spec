@@ -73,6 +73,7 @@ Configuration utilities for the FFADO firewire drivers.
 %{_datadir}/%{name}/configuration
 %{_datadir}/%{name}/*.xml
 %{_datadir}/applications/mandriva-ffado-mixer.desktop
+%{_datadir}/metainfo/ffado-mixer.appdata.xml
 %dir %{_datadir}/%{name}/icons
 %{_datadir}/%{name}/icons/hi64-apps-ffado.png
 %{python_sitelib}/ffado/*.ui
@@ -102,6 +103,8 @@ Development files needed to build applications against libffado.
 %dir %{_includedir}/%{name}
 %{_includedir}/%{name}/*.h
 %{_libdir}/pkgconfig/%{name}.pc
+%{_libdir}/libffado/static_info.txt
+
 
 %prep
 %setup -q
