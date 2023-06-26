@@ -23,7 +23,7 @@ BuildRequires:	python3dist(pyqt5)
 BuildRequires:	pkgconfig(expat)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	python-dbus
-BuildRequires:	pkgconfig(dbus-c++-1)
+#BuildRequires:	pkgconfig(dbus-c++-1)
 BuildRequires:	pkgconfig(libconfig)
 BuildRequires:	python-qt5-dbus
 
