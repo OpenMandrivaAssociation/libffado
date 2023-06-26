@@ -112,9 +112,9 @@ Development files needed to build applications against libffado.
 %install
 %scons_install PREFIX=%{_prefix} LIBDIR=%{_libdir}
 
-install -m 0755 support/tools/listirqinfo.py %{buildroot}%{_datadir}/libffado/python
-install -m 0755 support/tools/helpstrings.py %{buildroot}%{_datadir}/libffado/python
-chmod a+x %{buildroot}%{_datadir}/libffado/python/*.py
+#install -m 0755 support/tools/listirqinfo.py %{buildroot}%{_datadir}/libffado/python
+#install -m 0755 support/tools/helpstrings.py %{buildroot}%{_datadir}/libffado/python
+#chmod a+x %{buildroot}%{_datadir}/libffado/python/*.py
 
 sed -i -e '1i#!/usr/bin/python' %{buildroot}%{_datadir}/libffado/python/ffado_diag_helpers.py
 sed -i -e '1i#!/usr/bin/python' %{buildroot}%{_datadir}/libffado/python/helpstrings.py
