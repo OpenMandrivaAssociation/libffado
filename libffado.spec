@@ -116,8 +116,8 @@ Development files needed to build applications against libffado.
 #install -m 0755 support/tools/helpstrings.py %{buildroot}%{_datadir}/libffado/python
 #chmod a+x %{buildroot}%{_datadir}/libffado/python/*.py
 
-sed -i -e '1i#!/usr/bin/python' %{buildroot}%{_datadir}/libffado/python/ffado_diag_helpers.py
-sed -i -e '1i#!/usr/bin/python' %{buildroot}%{_datadir}/libffado/python/helpstrings.py
+#sed -i -e '1i#!/usr/bin/python' %{buildroot}%{_datadir}/libffado/python/ffado_diag_helpers.py
+#sed -i -e '1i#!/usr/bin/python' %{buildroot}%{_datadir}/libffado/python/helpstrings.py
 
 rm -rf %{buildroot}%{_bindir}/test-dice-eap
 
