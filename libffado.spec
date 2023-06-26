@@ -4,9 +4,8 @@
 
 Name:		libffado
 Summary:	Firewire audio drivers for JACK
-Version:	2.1.0
-Release:	7
-
+Version:	2.4.7
+Release:	1
 Source0:	http://www.ffado.org/files/%{name}-%{version}.tgz
 URL:		http://www.ffado.org/
 License:	GPLv2+ and GPLv3
@@ -14,17 +13,19 @@ Group:		Sound
 
 BuildRequires:	scons
 BuildRequires:	pkgconfig
+BuildRequires:  pkgconfig(alsa)
+BuildRequires:  pkgconfig(jack)
 BuildRequires:	pkgconfig(libraw1394)
-BuildRequires:	libiec61883-devel
+BuildRequires:	pkgconfig(libiec61883)
 BuildRequires:	pkgconfig(libavc1394)
-BuildRequires:	libxml++-devel
-BuildRequires:	python-qt4-devel
-BuildRequires:	expat-devel
-BuildRequires:	dbus-devel
+BuildRequires:	pkgconfig(libxml++-2.6)
+BuildRequires:	python3dist(pyqt5)
+BuildRequires:	pkgconfig(expat)
+BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	python-dbus
 BuildRequires:	pkgconfig(dbus-c++-1)
 BuildRequires:	pkgconfig(libconfig)
-BuildRequires:	python-qt4-dbus
+BuildRequires:	python-qt5-dbus
 
 %description
 The FFADO library provides a generic, open-source solution for the
