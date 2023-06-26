@@ -58,8 +58,8 @@ Summary:		Firewire audio driver applications and utilities
 Group:			Sound
 Requires:		%{lib_name} = %{version}-%{release}
 Requires:		python-dbus
-Requires:		qt4-qtdbus
-Requires:		python-qt4
+Requires:		python-qt5-dbus
+Requires:		python-qt5
 Conflicts:		%{mklibname ffado 2} < 2.1.0-2
 
 %description -n ffado
