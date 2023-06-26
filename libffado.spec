@@ -69,7 +69,7 @@ Configuration utilities for the FFADO firewire drivers.
 %doc AUTHORS ChangeLog LICENSE.* README
 %{_bindir}/*
 %dir %{_datadir}/%{name}
-%{_datadir}/%{name}/python
+#{_datadir}/%{name}/python
 %{_datadir}/%{name}/configuration
 %{_datadir}/%{name}/*.xml
 %{_datadir}/applications/mandriva-ffado-mixer.desktop
@@ -80,7 +80,7 @@ Configuration utilities for the FFADO firewire drivers.
 %{python_sitelib}/ffado/mixer/*.ui
 %{python_sitelib}/ffado/mixer/*.py
 %{python_sitelib}/ffado/widgets/*.py
-%{_datadir}/dbus-1/services/org.ffado.Control.service
+#{_datadir}/dbus-1/services/org.ffado.Control.service
 %doc %{_mandir}/man1/*
 
 %package -n %{lib_name_devel}
