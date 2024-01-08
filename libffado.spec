@@ -115,6 +115,7 @@ cd %{name}
 %scons PREFIX=%{_prefix} LIBDIR=%{_libdir} MANDIR=%{_mandir}
 
 %install
+cd %{name}
 %scons_install PREFIX=%{_prefix} LIBDIR=%{_libdir}
 
 #install -m 0755 support/tools/listirqinfo.py %{buildroot}%{_datadir}/libffado/python
