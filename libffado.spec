@@ -110,6 +110,7 @@ Development files needed to build applications against libffado.
 %setup -q
 
 %build
+cd %{name}
 %scons PREFIX=%{_prefix} LIBDIR=%{_libdir} MANDIR=%{_mandir}
 
 %install
