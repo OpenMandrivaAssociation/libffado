@@ -12,6 +12,7 @@ License:	GPLv2+ and GPLv3
 Group:		Sound
 
 BuildRequires:	scons
+BuildRequires:  which
 BuildRequires:	pkgconfig
 BuildRequires:  pkgconfig(alsa)
 BuildRequires:  pkgconfig(jack)
