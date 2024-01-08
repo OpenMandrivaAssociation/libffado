@@ -1,13 +1,14 @@
 %define lib_major 2
-%define lib_name %mklibname ffado %{lib_major}
+%define lib_name %mklibname ffado
+%define oldlib_name %mklibname ffado 2
 %define lib_name_devel %mklibname ffado -d
 
 Name:		libffado
 Summary:	Firewire audio drivers for JACK
 Version:	2.4.8
 Release:	1
-Source0:	http://www.ffado.org/files/%{name}-%{version}.tgz
-URL:		http://www.ffado.org/
+Source0:	https://www.ffado.org/files/%{name}-%{version}.tgz
+URL:		https://www.ffado.org/
 License:	GPLv2+ and GPLv3
 Group:		Sound
 
@@ -36,10 +37,10 @@ firewire backends of the jack audio connection kit sound server
 (jackit package). This backend provides audio and midi support,
 and is available in both jack1 and jack2.
 
-
 %package -n %{lib_name}
 Summary:	Firewire audio drivers for JACK
 Group:		Sound
+%rename %{oldlib_name}
 
 %description -n %{lib_name}
 The FFADO library provides a generic, open-source solution for the
@@ -69,7 +70,6 @@ Configuration utilities for the FFADO firewire drivers.
 %files -n ffado
 %{_bindir}/*
 %dir %{_datadir}/%{name}
-#{_datadir}/%{name}/python
 %{_datadir}/%{name}/configuration
 %{_datadir}/%{name}/*.xml
 %{_datadir}/applications/mandriva-ffado-mixer.desktop
@@ -107,7 +107,7 @@ Development files needed to build applications against libffado.
 
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 cd %{name}
