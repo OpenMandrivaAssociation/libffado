@@ -67,7 +67,6 @@ Conflicts:		%{mklibname ffado 2} < 2.1.0-2
 Configuration utilities for the FFADO firewire drivers.
 
 %files -n ffado
-%doc AUTHORS ChangeLog LICENSE.* README
 %{_bindir}/*
 %dir %{_datadir}/%{name}
 #{_datadir}/%{name}/python
