@@ -73,14 +73,14 @@ Configuration utilities for the FFADO firewire drivers.
 %{_datadir}/%{name}/configuration
 %{_datadir}/%{name}/*.xml
 %{_datadir}/applications/mandriva-ffado-mixer.desktop
-%{_datadir}/metainfo/ffado-mixer.appdata.xml
-%dir %{_datadir}/%{name}/icons
-%{_datadir}/%{name}/icons/hi64-apps-ffado.png
-%{python_sitelib}/ffado/*.ui
-%{python_sitelib}/ffado/*.py
-%{python_sitelib}/ffado/mixer/*.ui
-%{python_sitelib}/ffado/mixer/*.py
-%{python_sitelib}/ffado/widgets/*.py
+#{_datadir}/metainfo/ffado-mixer.appdata.xml
+#dir %{_datadir}/%{name}/icons
+#{_datadir}/%{name}/icons/hi64-apps-ffado.png
+#{python_sitelib}/ffado/*.ui
+#{python_sitelib}/ffado/*.py
+#{python_sitelib}/ffado/mixer/*.ui
+#{python_sitelib}/ffado/mixer/*.py
+#{python_sitelib}/ffado/widgets/*.py
 #{_datadir}/dbus-1/services/org.ffado.Control.service
 %doc %{_mandir}/man1/*
 
@@ -110,11 +110,11 @@ Development files needed to build applications against libffado.
 %autosetup -p1
 
 %build
-cd %{name}
+#cd %{name}
 %scons PREFIX=%{_prefix} LIBDIR=%{_libdir} MANDIR=%{_mandir}
 
 %install
-cd %{name}
+#cd %{name}
 %scons_install PREFIX=%{_prefix} LIBDIR=%{_libdir}
 
 #install -m 0755 support/tools/listirqinfo.py %{buildroot}%{_datadir}/libffado/python
