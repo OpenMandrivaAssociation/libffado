@@ -1,0 +1,31 @@
+diff -up libffado-2.5.0/SConstruct.omv~ libffado-2.5.0/SConstruct
+--- libffado-2.5.0/SConstruct.omv~	2026-03-28 00:09:54.552455083 +0100
++++ libffado-2.5.0/SConstruct	2026-03-28 00:10:49.013706616 +0100
+@@ -418,19 +418,22 @@ if env['BUILD_MIXER'] != 'false':
+          and conf.CheckForPyModule( 'dbus.mainloop.qt' )) \
+      or (    conf.CheckForApp( 'which pyuic5' ) \
+          and conf.CheckForPyModule( 'PyQt5' ) \
+-         and conf.CheckForPyModule( 'dbus.mainloop.pyqt5' )):
++         and conf.CheckForPyModule( 'dbus.mainloop.pyqt5' )) \
++     or (    conf.CheckForApp( 'which pyuic6' ) \
++         and conf.CheckForPyModule( 'PyQt6' ) \
++         and conf.CheckForPyModule( 'dbus.mainloop.pyqt6' )):
+         env['BUILD_MIXER'] = 'true'
+     elif not env.GetOption('clean'):
+         if env['BUILD_MIXER'] == 'auto':
+             env['BUILD_MIXER'] = 'false'
+             print("""
+-The prerequisites ('pyuic4'/'pyuic5' and the python-modules 'dbus' and
+-'PyQt4'/'PyQt5', the packages could be named like dbus-python and PyQt) to
++The prerequisites ('pyuic4'/'pyuic5'/'pyuic6' and the python-modules 'dbus' and
++'PyQt4'/'PyQt5'/'PyQt6', the packages could be named like dbus-python and PyQt) to
+ build the mixer were not found. Therefore the qt mixer will not be installed.""")
+         else: # env['BUILD_MIXER'] == 'true'
+             print("""
+-The prerequisites ('pyuic4'/'pyuic5' and the python-modules 'dbus' and
+-'PyQt4'/'PyQt5', the packages could be named like dbus-python and PyQt) to
++The prerequisites ('pyuic4'/'pyuic5'/'pyuic6' and the python-modules 'dbus' and
++'PyQt4'/'PyQt5'/'PyQt6', the packages could be named like dbus-python and PyQt) to
+ build the mixer were not found, but BUILD_MIXER was requested.""")
+             Exit( 1 )
+ 
