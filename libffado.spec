@@ -5,8 +5,8 @@
 
 Name:		libffado
 Summary:	Firewire audio drivers for JACK
-Version:	2.4.9
-Release:	2
+Version:	2.5.0
+Release:	1
 Source0:	https://www.ffado.org/files/%{name}-%{version}.tgz
 URL:		https://www.ffado.org/
 License:	GPLv2+ and GPLv3
@@ -20,14 +20,16 @@ BuildRequires:  pkgconfig(jack)
 BuildRequires:	pkgconfig(libraw1394)
 BuildRequires:	pkgconfig(libiec61883)
 BuildRequires:	pkgconfig(libavc1394)
-BuildRequires:	pkgconfig(libxml++-2.6)
-BuildRequires:	python3dist(pyqt5)
+BuildRequires:	python%{pyver}dist(pyqt6)
 BuildRequires:	pkgconfig(expat)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	python-dbus
 #BuildRequires:	pkgconfig(dbus-c++-1)
 BuildRequires:	pkgconfig(libconfig)
-BuildRequires:	python-qt5-dbus
+BuildRequires:	python-qt6-dbus
+
+%patchlist
+libffado-2.5.0-pyqt6.patch
 
 %description
 The FFADO library provides a generic, open-source solution for the
@@ -111,11 +113,11 @@ Development files needed to build applications against libffado.
 
 %build
 #cd %{name}
-%scons PREFIX=%{_prefix} LIBDIR=%{_libdir} MANDIR=%{_mandir}
+%scons PREFIX=%{_prefix} LIBDIR=%{_libdir} MANDIR=%{_mandir} SERIALIZE_USE_EXPAT=true
 
 %install
 #cd %{name}
-%scons_install PREFIX=%{_prefix} LIBDIR=%{_libdir}
+%scons_install PREFIX=%{_prefix} LIBDIR=%{_libdir} SERIALIZE_USE_EXPAT=true
 
 #install -m 0755 support/tools/listirqinfo.py %{buildroot}%{_datadir}/libffado/python
 #install -m 0755 support/tools/helpstrings.py %{buildroot}%{_datadir}/libffado/python
